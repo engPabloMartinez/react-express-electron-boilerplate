@@ -2,6 +2,7 @@
 .git
 .idea
 .vscode
+.DS_Store
 
 # node-modules
 node_modules
@@ -11,6 +12,7 @@ client/node_modules
 # builds
 build
 dist
+server/dist
 
 # test coverage
 server/coverage
