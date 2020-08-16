@@ -1,0 +1,22 @@
+{
+  "name": "react-express-electron-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate to generate an Electron app with a React Front end and an Express BackEnd embedded.",
+  "scripts": {
+    "start-dev": "concurrently \"cd client && npm start\" \"wait-on http://localhost:3000 && cd server && yarn run electron-dev \"",
+    "install-all": "yarn install && cd server && yarn install && cd ../client && yarn install",
+    "remove-create-dir": "rm -rf dist && rm -rf build && rm -rf server/dist && mkdir dist && mkdir build && mkdir server/dist",
+    "build-all": "yarn run remove-create-dir && cd client && yarn react-build && cd ../server && yarn run build && yarn run electron-build-all",
+    "build-win": "yarn run remove-create-dir && cd client && yarn react-build && cd ../server && yarn run build && yarn run electron-build-win && yarn run remove-package-folder && yarn run move-build",
+    "build-linux": "yarn run remove-create-dir && cd client && yarn react-build && cd ../server && yarn run build && yarn run electron-build-linux && yarn run remove-package-folder && yarn run move-build",
+    "build-mac": "yarn run remove-create-dir && cd client && yarn react-build && cd ../server && yarn run build && yarn run electron-build-mac && yarn run remove-package-folder && yarn run move-build",
+    "test": "cd client && yarn run test-no-watch && cd ../server && yarn run test",
+    "test-coverage": "cd client && yarn run test-coverage && cd ../server && yarn run test-coverage"
+  },
+  "author": "Pablo Martinez",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "wait-on": "^5.2.0"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "name": "react-express-electron-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate to generate an Electron app with a React Front end and an Express BackEnd embedded. (React Side)",
+  "author": "Pablo Martinez",
+  "license": "ISC",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "move-client": "mv build ../server/dist/client || move build ../server/dist/client",
+    "react-build": "react-scripts build && yarn run move-client",
+    "test": "react-scripts test --env=jsdom",
+    "test-no-watch": "react-scripts test --env=jsdom --watchAll=false",
+    "test-coverage": "react-scripts test --coverage --env=jsdom --watchAll=false",
+    "start": "cross-env BROWSER=none yarn run react-start"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/serviceWorker.ts",
+      "!<rootDir>/src/App.tsx",
+      "!<rootDir>/src/Routes.tsx",
+      "!src/**/types.ts",
+      "!src/**/*.d.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "./",
+  "devDependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.10",
+    "@types/debug": "^4.1.5",
+    "@types/history": "^4.7.7",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/redux": "^3.6.0",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^6.8.0",
+    "cross-env": "^7.0.2",
+    "debug": "^4.1.1",
+    "history": "4.10.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.19.2"
+  }
+}

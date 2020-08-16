@@ -1,0 +1,17 @@
+# project
+.git
+.idea
+.vscode
+
+# node-modules
+node_modules
+server/node_modules
+client/node_modules
+
+# builds
+build
+dist
+
+# test coverage
+server/coverage
+client/coverage
